@@ -58,10 +58,12 @@ class Model {
       })
       .then(() => {
         return db.collection("USERS").doc(uid).update({ isExist: false })
-      }).catch((error)=>{
+      })
+      .catch((error) => {
         throw error
       })
   }
+  
 }
 
 module.exports = Model

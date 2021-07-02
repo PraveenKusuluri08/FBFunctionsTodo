@@ -1,7 +1,7 @@
 const Model = require("./model")
 const { db, admin } = require("../../utils/admin")
 const router = require("express").Router()
-
+const {endPoint} = require("../../endPoint/endpoint")
 router.post("/createUser", (req, res) => {
   const inputs = {
     email: req.body.email,
@@ -31,7 +31,7 @@ router.post("/createUser", (req, res) => {
     })
 })
 
-router.put("/updateUser/:id",(req,res)=>{
+router.put("/updateUser/:id",endPoint,(req,res)=>{
   const inputData={
     phoneNumber:req.body.phoneNumber,
     displayName: req.body.displayName,
